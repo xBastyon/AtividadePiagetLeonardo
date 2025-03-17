@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using PiagetLeonardo.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<PiagetLeonardoContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("PiagetLeonardoContext") ?? throw new InvalidOperationException("Connection string 'PiagetLeonardoContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
