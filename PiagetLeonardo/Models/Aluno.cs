@@ -1,5 +1,8 @@
 ﻿namespace PiagetLeonardo.Models
 {
+    /// <summary>
+    /// Aluno Leonardo
+    /// </summary>
     public class Aluno
     {
         public Guid Id { get; set; }
